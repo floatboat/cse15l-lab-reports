@@ -1,1 +1,37 @@
 Hello, please don't leave me
+
+# Markdown Stuff Below (This was formatted using Heading 1)
+
+*Italic*
+
+**Bold**
+
+## Whoa! A self repeating link! (This was formatted using Heading 2)
+[Goes to my cse15l-labreports!](https://floatboat.github.io/cse15l-lab-reports/)
+
+![Image]
+(https://w7.pngwing.com/pngs/261/956/png-transparent-macbook-pro-laptop-apple-imac-vintage-computer-angle-electronics-computer.png)
+
+> Whoa! This blockquote is telling me cool tips and info in an eye satisfying way!
+
+* This is a list? 
+* Make a list
+* Make some friends
+* Make some noise
+
+1. This is a number list - oh wait, One
+2. Two
+3. Three 
+
+Whoa, a horizontal rule below us!
+---
+
+I want to say Hello World in Java! I need a reminder! 
+`System.out.println("Hello World!");`
+
+Wait! I need a code block!
+```
+public static void main(String[] args) {
+            System.out.println("Hello World!");
+    }
+```
