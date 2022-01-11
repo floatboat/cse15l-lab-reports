@@ -9,8 +9,7 @@ Hello, please don't leave me
 ## Whoa! A self repeating link! (This was formatted using Heading 2)
 [Goes to my cse15l-labreports!](https://floatboat.github.io/cse15l-lab-reports/)
 
-![Image]
-(https://w7.pngwing.com/pngs/261/956/png-transparent-macbook-pro-laptop-apple-imac-vintage-computer-angle-electronics-computer.png)
+![Image](https://w7.pngwing.com/pngs/261/956/png-transparent-macbook-pro-laptop-apple-imac-vintage-computer-angle-electronics-computer.png)
 
 > Whoa! This blockquote is telling me cool tips and info in an eye satisfying way!
 
