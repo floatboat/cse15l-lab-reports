@@ -2,9 +2,9 @@ Hello, please don't leave me
 
 # Markdown Stuff Below (This was formatted using Heading 1)
 
-*Italic*
+*Italics are cool*
 
-**Bold**
+**But maybe Bold is better?**
 
 ## Whoa! A self repeating link! (This was formatted using Heading 2)
 [Goes to my cse15l-labreports!](https://floatboat.github.io/cse15l-lab-reports/)
