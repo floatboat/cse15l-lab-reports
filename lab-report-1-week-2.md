@@ -7,7 +7,18 @@
 ![Image](RemotelyConnecting.png)
 
 ## Trying Some Commands
-
+![Image](cat.png)
+---
+![Image](cp.png)
+---
+![Image](ls-a.png)
+---
+![Image](ls-lat.png)
+---
+![Image](ls-latbroke.png)
+---
+![Image](ls.png)
+---
 
 ## Moving Files with scp
 
