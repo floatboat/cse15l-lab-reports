@@ -2,7 +2,7 @@
 
 ## Installing VScode
 ![Image](vs_code.png)
-I had experience with VS Code before, so I downloaded it before. Either way, just go follow the instructions on VS Code online to download. (https://code.visualstudio.com/) 
+I had experience with VS Code before, so I downloaded it before. Either way, just go follow the instructions on VS Code online to download. [VS Code Instructions can be found here.](https://code.visualstudio.com/) 
 
 
 ## Remotely Connecting
@@ -22,7 +22,15 @@ First, I installed OpenSSH (https://docs.microsoft.com/en-us/windows-server/admi
 ---
 ![Image](ls.png)
 ---
-Tested out commands the various terminal commands like cd, ls, pwd, mkdir, cp, etc. I tried them out either on my computer or on the remote computer after ssh-ing. Some images showing the results are above. 
+Tested out commands the various terminal commands, including:
+```
+cd
+ls
+pwd
+mkdir
+cp
+```
+I tried them out either on my computer or on the remote computer after ssh-ing. Some images showing the results are above. 
 
 ## Moving Files with scp
 ![Image](scp1.png)
