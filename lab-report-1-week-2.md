@@ -54,5 +54,6 @@ Went back to VS Code and made the .ssh directory on there. Then, logging out, on
 
 
 ## Optimizing Remote Running
+![Image](command_txt.png)
 ![Image](optimize.png)
 Wrote down a combined command in the notepad app for later reference and use. When I needed to use it, it would be ready for me to use and run faster with by running the 3 commands in a row without my typing in. This was done by copying the long command itself and pasting it into the command line. 
