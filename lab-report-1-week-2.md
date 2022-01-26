@@ -54,30 +54,34 @@ Went back to VS Code and made the .ssh directory on there. Then, logging out, on
 
 
 ## Optimizing Remote Running
-![Image](command_txt.png)
-Wrote down a combined command in the notepad app for later reference and use. Already had the notepad open, so I just added the `scp WhereAmI.java cs15lwi22aig@ieng6.ucsd.edu:~/; javac WhereAmI.java; java WhereAmI`. 
+![Image](command_txt2.png)
+Wrote down a combined command in the notepad app for later reference and use. Already had the notepad open, so I just added the `scp WhereAmI.java cs15lwi22aig@ieng6.ucsd.edu:~/; ssh cs15lwi22aig@ieng6.ucsd.edu "javac WhereAmI.java; java WhereAmI"`. 
 - 1 keystroke (a click to bring up the notepad) 
 - 1 keystroke to select all of `scp WhereAmI.java cs15lwi22aig@ieng6.ucsd.edu:~/`, which was already in my notepad 
-- 1 keystroke to paste it into a new line of notepad 
+- 2 keystrokes to paste it into a new line of notepad 
+- 1 keystroke to select all of `ssh cs15lwi22aig@ieng6.ucsd.edu`
+- 3 strokes to click line with `scp WhereAmI.java cs15lwi22aig@ieng6.ucsd.edu:~/` and put in `; ` (including a space)
+- 1 stroke to Crtl-V to paste in `ssh cs15lwi22aig@ieng6.ucsd.edu`
 - 1 click to open up Visual Studio Editor 
 - 1 click to activate the terminal
 - 3 strokes when I pressed the up button 3 times to select the `javac WhereAmI.java` command
 - 1 click to get back to the notepad
-- 3 strokes to click on the last row and 2 keystrokes to add `; `
-- 1 stroke using Ctrl-V to paste in `javac WhereAmI.java`
+- 4 strokes to click on the last row and 2 keystrokes to add ` ""` (including a space)
+- 1 stroke using Ctrl-V to paste in `javac WhereAmI.java` in between the quotations
+- 2 strokes to add `; ` (including space) after `javac WhereAmI.java` within quotations
 - 9 strokes to repeat the process for `java WhereAmI`
 
-In total, this took about 22 keystrokes to make the combined command. 
+In total, this took about 31 keystrokes to make the combined command. 
 
 ![Image](where_am_i_edit.png)
 - 1 click to open up Visual Studio code, where I will edit it locally 
 - 3 strokes to copy and paste `System.out.println("bye")` 
 - 2 strokes to select and delete bye within the quotes
-- 4 strokes to type out fine
+- 4 strokes to type out "fine"
 
 All of this took 10 strokes. 
 
-![Image](optimize.png)
+![Image](where_am_i_2.png)
 - 1 stroke to bring up the terminal by clicking on it
 - 1 keystroke to select the notepad tab
 - 2 strokes to copy and paste the entire command
@@ -85,11 +89,12 @@ All of this took 10 strokes.
 - 1 stroke to select the terminal
 - 2 strokes to paste the command in and run it. 
 - 6 strokes after asking for my passphrase, I typed it in and entered 
+- 6 strokes after asking for my passphrase again
 
-This took 14 strokes in total.  
+This took 20 strokes in total.  
 
 Now, when I needed to use it, it would be ready for me to use and run faster with by running the 3 commands in a row without my typing in. 
 
-While making the combined command line, editing the code, and running it in the terminal took 46 strokes. 
+While making the combined command line, editing the code, and running it in the terminal took 61 strokes. 
 
-However, if I need to repeat the process, I won't have to make new command lines, so it would only take 24 strokes. 
+However, if I need to repeat the process, I won't have to make new command lines, so it would only take 30 strokes. 
