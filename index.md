@@ -3,6 +3,8 @@ Hello, please don't leave me
 [Lab Report 1](https://floatboat.github.io/cse15l-lab-reports/lab-report-1-week-2.html)
 [*](https://floatboat.github.io/cse15l-lab-reports/floppy.html)
 
+[Lab Report 2](https://floatboat.github.io/week4_labreport/)
+
 # Markdown Stuff Below (This was formatted using Heading 1)
 
 *Italics are cool*
