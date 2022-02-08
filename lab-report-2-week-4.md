@@ -7,6 +7,7 @@ Test File: [test-file2.md](https://github.com/floatboat/markdown-parse/blob/main
 
 Symptom:
 ``` 
+PS C:\Users\thuan\OneDrive\Documents\GitHub\markdown-parse> java MarkdownParse test-file2.md
 Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 10, end -1, length 33
         at MarkdownParse.getLinks(MarkdownParse.java:23)
         at MarkdownParse.main(MarkdownParse.java:45)
@@ -21,7 +22,7 @@ Test File: [test-file3.md](https://github.com/floatboat/markdown-parse/blob/main
 
 Symptom:
 ```
-S C:\Users\thuan\OneDrive\Documents\GitHub\markdown-parse> javac MarkdownParse.java
+PS C:\Users\thuan\OneDrive\Documents\GitHub\markdown-parse> javac MarkdownParse.java
 PS C:\Users\thuan\OneDrive\Documents\GitHub\markdown-parse> java MarkdownParse test-file3.md
 Exception in thread "main" java.lang.StringIndexOutOfBoundsException: begin 0, end -1, length 3
         at java.base/java.lang.String.checkBoundsBeginEnd(String.java:4601)
