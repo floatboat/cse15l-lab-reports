@@ -113,22 +113,62 @@ I think that I can just make a small code change to make my program work for sni
 
 ### Should produce:
 ```
-
+[https://www.twitter.com, https://ucsd-cse15l-w22.github.io/, https://cse.ucsd.edu/]
 ```
 ### My Test Code:
 ```
-
+    @Test
+    public void testSnippet3() throws IOException {
+        String regFile = Files.readString(Path.of("./snippet-3.md"));
+        String[] regLines = regFile.split("\n");
+        assertEquals(List.of("https://www.twitter.com", "https://ucsd-cse15l-w22.github.io/", 
+            "https://cse.ucsd.edu/"), MarkdownParse.getLinks(regLines));
+    }
 ```
 ### Reviewer Test Code:
 ```
-
+    @Test
+    public void testSnippet3() throws IOException {
+        ArrayList<String> testfile2 = new ArrayList<>();
+        testfile2.add("https://www.twitter.com");
+        testfile2.add("https://ucsd-cse15l-w22.github.io/");
+        testfile2.add("https://cse.ucsd.edu/");
+        String testfilemd = MarkdownParse.converter("./snippet-3.md");
+        assertEquals(testfile2, MarkdownParse.getLinks(testfilemd));
+    }
 ```
 ### My Output:
 ```
-
+3) testSnippet3(MarkdownParseTest)
+java.lang.AssertionError: expected:<[https://www.twitter.com, https://ucsd-cse15l-w22.github.io/, https://cse.ucsd.edu/]> but was:<[, , ]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet3(MarkdownParseTest.java:52)
 ```
 ### Reviewed Output:
 ```
+3) testSnippet3(MarkdownParseTest)
+java.lang.AssertionError: expected:<[https://www.twitter.com, https://ucsd-cse15l-w22.github.io/, https://cse.ucsd.edu/]> but was:<[
+    https://www.twitter.com
+,
+    https://ucsd-cse15l-w22.github.io/
+, github.com
 
+And there's still some more text after that.
+
+[this link doesn't have a closing parenthesis for a while](https://cse.ucsd.edu/
+
+
+
+]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet3(MarkdownParseTest.java:107)
 ```
 ### Answering Question #3:
+
+I think that I can't just make a small code change to make my program work for snippet 3 and all related cases. The way my program works means that I have to redo how I take in the text lines, as it breaks up each line into it's own "quote." This means that in order to account for new lines, I'd have to implement more than 10 lines of code.
