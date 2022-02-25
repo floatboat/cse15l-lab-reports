@@ -10,7 +10,7 @@
 
 ### Should produce:
 ```
-[`google.com, google.com, ucsd.edu]]
+[`google.com, google.com, ucsd.edu]
 ```
 ### My Test Code:
 ```
@@ -18,7 +18,7 @@
     public void testSnippet1() throws IOException {
         String regFile = Files.readString(Path.of("./snippet-1.md"));
         String[] regLines = regFile.split("\n");
-        assertEquals(List.of("another link", "cod[e", "code]"), MarkdownParse.getLinks(regLines));
+        assertEquals(List.of("`google.com", "google.com", "ucsd.edu"), MarkdownParse.getLinks(regLines));
     }
 ```
 ### Reviewer Test Code:
@@ -26,21 +26,17 @@
     @Test
     public void testSnippet1() throws IOException {
         ArrayList<String> testfile2 = new ArrayList<>();
-        testfile2.add("another link");
-        testfile2.add("cod[e");
-        testfile2.add("code]");
+        testfile2.add("`google.com");
+        testfile2.add("google.com");
+        testfile2.add("ucsd.edu");
         String testfilemd = MarkdownParse.converter("./snippet-1.md");
         assertEquals(testfile2, MarkdownParse.getLinks(testfilemd));
     }
 ```
 ### My Output:
 ```
-JUnit version 4.13.2
-.....E
-Time: 0.019
-There was 1 failure:
 1) testSnippet1(MarkdownParseTest)
-java.lang.AssertionError: expected:<[another link, cod[e, code]]> but was:<[url.com, `google.com, google.com, ucsd.edu]>
+java.lang.AssertionError: expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com, ucsd.edu]>
         at org.junit.Assert.fail(Assert.java:89)
         at org.junit.Assert.failNotEquals(Assert.java:835)
         at org.junit.Assert.assertEquals(Assert.java:120)
@@ -50,7 +46,7 @@ java.lang.AssertionError: expected:<[another link, cod[e, code]]> but was:<[url.
 ### Reviewed Output:
 ```
 1) testSnippet1(MarkdownParseTest)
-java.lang.AssertionError: expected:<[another link, cod[e, code]]> but was:<[url.com, `google.com, google.com]>
+java.lang.AssertionError: expected:<[`google.com, google.com, ucsd.edu]> but was:<[url.com, `google.com, google.com]>
         at org.junit.Assert.fail(Assert.java:89)
         at org.junit.Assert.failNotEquals(Assert.java:835)
         at org.junit.Assert.assertEquals(Assert.java:120)
@@ -59,13 +55,13 @@ java.lang.AssertionError: expected:<[another link, cod[e, code]]> but was:<[url.
 ```
 ### Answering Question #1:
 
-I think that it will take more than a small code change to make my program work for snippet 1 and related cases using inline code with backticks. The reason I say this is because my program (mistakenly) tries to get links from parenthesis rather than within brackets. This results in bad output, so I would have to reinstate the brackets again. Also, my program hasn't accounted for backticks/other characters that could interfere with the brackets, so I would have to figure out something that would probably add more than 10 lines of code. 
+I think that I can just make a small code change to make my program work for snippet 1 and all related cases. First, I need to actually add code (only 4 lines) to check for brackets and making sure that there's a space in between the outer bracket and the inner parenthesis. Then, my code will work alright. It was already able to process the backticks easily, but it just wasn't able to check for valid links. 
 
 ## Snippet 2
 
 ### Should produce:
 ```
-[nested link, a nested parenthesized url, some escaped [ brackets ]]
+[a.com, a.com(()), example.com]
 ```
 ### My Test Code:
 ```
@@ -73,18 +69,26 @@ I think that it will take more than a small code change to make my program work 
     public void testSnippet2() throws IOException {
         String regFile = Files.readString(Path.of("./snippet-2.md"));
         String[] regLines = regFile.split("\n");
-        assertEquals(List.of("nested link", "a nested parenthesized url", 
-            "some escaped [ brackets ]"), MarkdownParse.getLinks(regLines));
+        assertEquals(List.of("a.com", "a.com(())", 
+            "example.com"), MarkdownParse.getLinks(regLines));
     }
 ```
 ### Reviewer Test Code:
 ```
-
+    @Test
+    public void testSnippet2() throws IOException {
+        ArrayList<String> testfile2 = new ArrayList<>();
+        testfile2.add("a.com");
+        testfile2.add("a.com(())");
+        testfile2.add("example.com");
+        String testfilemd = MarkdownParse.converter("./snippet-2.md");
+        assertEquals(testfile2, MarkdownParse.getLinks(testfilemd));
+    }
 ```
 ### My Output:
 ```
 2) testSnippet2(MarkdownParseTest)
-java.lang.AssertionError: expected:<[nested link, a nested parenthesized url, some escaped [ brackets ]]> but was:<[a.com, a.com((, example.com]>
+java.lang.AssertionError: expected:<[a.com, a.com(()), example.com]> but was:<[a.com, a.com((, example.com]>
         at org.junit.Assert.fail(Assert.java:89)
         at org.junit.Assert.failNotEquals(Assert.java:835)
         at org.junit.Assert.assertEquals(Assert.java:120)
@@ -93,9 +97,17 @@ java.lang.AssertionError: expected:<[nested link, a nested parenthesized url, so
 ```
 ### Reviewed Output:
 ```
-
+2) testSnippet2(MarkdownParseTest)
+java.lang.AssertionError: expected:<[a.com, a.com(()), example.com]> but was:<[a.com, a.com((]>
+        at org.junit.Assert.fail(Assert.java:89)
+        at org.junit.Assert.failNotEquals(Assert.java:835)
+        at org.junit.Assert.assertEquals(Assert.java:120)
+        at org.junit.Assert.assertEquals(Assert.java:146)
+        at MarkdownParseTest.testSnippet2(MarkdownParseTest.java:97)
 ```
 ### Answering Question #2:
+
+I think that I can just make a small code change to make my program work for snippet 1 and all related cases. First, I would add a stack/counter algorithm (probably only 8 lines) to get the outer parenthesis and not just stop at the beginning one. Then, my code will work alright. It was already able to process the links correctly, but it just didn't get the other outer parenthesis. 
 
 ## Snippet 3
 
