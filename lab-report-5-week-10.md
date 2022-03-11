@@ -14,7 +14,9 @@ Afterwards, I ran `diff ~/week10/markdown-parse/week10.txt ~/my_week10/markdown-
 ![Image](vimdiff.PNG)
 
 ## Test 1 - [22.md](https://github.com/ucsd-cse15l-w22/markdown-parse/blob/main/test-files/22.md)
+(Note: Politz results on left, my results on right)
 ### Correct Implementation:
+![Image](22.md.PNG)
 
 
 ### Incorrect Implementation
@@ -22,8 +24,9 @@ Afterwards, I ran `diff ~/week10/markdown-parse/week10.txt ~/my_week10/markdown-
 
 
 ## Test 2 - [32.md](https://github.com/ucsd-cse15l-w22/markdown-parse/blob/main/test-files/32.md)
+(Note: Politz results on left, my results on right)
 ### Correct Implementation:
-
+![Image](32.md.PNG)
 
 ### Incorrect Implementation
 
