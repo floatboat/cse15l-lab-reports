@@ -9,6 +9,8 @@ Hello, please don't leave me
 
 [Lab Report 4](https://floatboat.github.io/cse15l-lab-reports/lab-report-4-week-8)
 
+[Lab Report 5](https://floatboat.github.io/cse15l-lab-reports/lab-report-5-week-10)
+
 # Markdown Stuff Below (This was formatted using Heading 1)
 
 *Italics are cool*
