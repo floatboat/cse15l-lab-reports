@@ -5,7 +5,7 @@ To find the tests with different results, first, I made two different directorie
 
 I added bash scripts (contained below) to both my_week10 and week10 directories to print out the respective file and their outputs. 
 
-![Image](script.PNG)
+![Image](script.png)
 
 Then, I ran `bash script.sh > my_results.txt` and `bash script.sh > week10.txt` respectively to get the outputs of running markdownparse on the test-files. 
 
