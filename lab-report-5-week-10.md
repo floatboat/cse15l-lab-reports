@@ -52,7 +52,7 @@ Expected Output: `[]`
 Mr. Politz's implementation correctly got the desired output for 41.md. This is because the "a" doesn't show up as a link, so there is no link to put in, so his is correct when it returns `[]`.
 
 ### Incorrect Implementation
-For my implementation of markdown parse, I can fix it by adding code to see whether there's a `"&quot;"` in between the quotes. Basically, whenever any part of the "link" has a space in it and a `"&quot;"`, it isn't supposed to be counted as a link, yet mine keeps going on and gets all of the link to the end. Therefore, in this section of my code - 
+For my implementation of markdown parse, I can fix it by adding code to see whether there's a `&quot;` in between the quotes. Basically, whenever any part of the "link" has a space in it and a `&quot;`, it isn't supposed to be counted as a link, yet mine keeps going on and gets all of the link to the end. Therefore, in this section of my code - 
 ```
             int openParen = line.indexOf("(", currentIndex);
             int closeParen = line.indexOf(")", openParen);
