@@ -14,19 +14,49 @@ Afterwards, I ran `diff ~/week10/markdown-parse/week10.txt ~/my_week10/markdown-
 ![Image](vimdiff.PNG)
 
 ## Test 1 - [22.md](https://github.com/ucsd-cse15l-w22/markdown-parse/blob/main/test-files/22.md)
-(Note: Politz results on left, my results on right)
-### Correct Implementation:
+### Correct Implementation (using VS Code Preview):
+Neither is correct.
+
 ![Image](22.md.PNG)
-
-
-### Incorrect Implementation
-
-
-
-## Test 2 - [32.md](https://github.com/ucsd-cse15l-w22/markdown-parse/blob/main/test-files/32.md)
 (Note: Politz results on left, my results on right)
-### Correct Implementation:
-![Image](32.md.PNG)
+
+Politz Result: `[]`
+
+My Result: `[/bar\* "ti\*tle"]`
+
+Expected Output: `[/bar\*]`
 
 ### Incorrect Implementation
+For my implementation of markdown parse, I can fix it by making my code check for parenthesis `"`. Basically, whenever any part of the "link" is a quote or has a parenthesis, it isn't counted in the link used. In my program, it always keeps reading on and only getting what is between the quotes, never actually checking for parenthesis. Therefore, in this section of my code -
+```
+            int openParen = line.indexOf("(", currentIndex);
+            int closeParen = line.indexOf(")", openParen);
+            toReturn.add(line.substring(openParen + 1, closeParen));
+            currentIndex = closeParen + 1;
+```
+I can add a line where the program returns whatever index it's at for the link whenever it encounters a parenthesis. This will be inbetween the openParen and closeParen lines.  
 
+
+## Test 2 - [41.md](https://github.com/ucsd-cse15l-w22/markdown-parse/blob/main/test-files/41.md)
+### Correct Implementation (using VS Code Preview):
+![Image](41.md.PNG)
+(Note: Politz results on left, my results on right)
+
+Politz Result: `[]`
+
+My Result: `[url &quot;tit&quot;]`
+
+Expected Output: `[]`
+
+
+Mr. Politz's implementation correctly got the desired output for 41.md. This is because the "a" doesn't show up as a link, so there is no link to put in, so his is correct when it returns `[]`.
+
+### Incorrect Implementation
+For my implementation of markdown parse, I can fix it by adding code to see whether there's a ` &quot;` in between the quotes. Basically, whenever any part of the "link" has a space in it and a `&quot;`, it isn't supposed to be counted as a link, yet mine keeps going on and gets all of the link to the end. Therefore, in this section of my code - 
+```
+            int openParen = line.indexOf("(", currentIndex);
+            int closeParen = line.indexOf(")", openParen);
+            toReturn.add(line.substring(openParen + 1, closeParen));
+            currentIndex = closeParen + 1;
+```
+I can add a line checking specifically for a space and `&quot;` between the index at openParen and that of closeParen and if it exists, then I should just return the quote from openParen, which would be nothing. 
